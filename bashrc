@@ -20,13 +20,8 @@ function conditionally_prefix_path {
 conditionally_prefix_path /usr/local/bin
 conditionally_prefix_path /usr/local/sbin
 conditionally_prefix_path /usr/local/share/python
-conditionally_prefix_path /usr/local/share/npm/bin
-conditionally_prefix_path /usr/local/mysql/bin
-conditionally_prefix_path /usr/texbin
 conditionally_prefix_path ~/bin
 conditionally_prefix_path ~/bin/private
-conditionally_prefix_path ~/.rbenv/bin
-conditionally_prefix_path ~/.rbenv/shims
 
 PATH=.:./bin:${PATH}
 
@@ -55,7 +50,6 @@ function conditionally_prefix_cdpath {
   fi
 }
 
-conditionally_prefix_cdpath ~/work
 
 CDPATH=.:${CDPATH}
 
@@ -113,7 +107,8 @@ fi
 
 # Do not set PS1 for dumb terminals
 if [ "$TERM" != 'dumb'  ] && [ -n "$BASH" ]; then
-  export PS1='\[\033[32m\]\n[\s: \w] $(ruby_prompt) $(git_prompt)\n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
+#  export PS1='\[\033[32m\]\n[\s: \w] $(ruby_prompt) $(git_prompt)\n\[\033[31m\][\u@\h]\$ \[\033[00m\]'
+export PS1='\[\033[31m\][\u@\h \W]\$ \[\033[00m\]'
 fi
 
 ############################################################
@@ -181,3 +176,5 @@ if [[ "$USER" == '' ]]; then
   # mainly for cygwin terminals. set USER env var if not already set
   USER=$USERNAME
 fi
+
+[[ -s "/Users/ktangwon/.rvm/scripts/rvm" ]] && source "/Users/ktangwon/.rvm/scripts/rvm"

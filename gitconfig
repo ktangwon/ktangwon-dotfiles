@@ -1,6 +1,6 @@
 [user]
-	email = ryan@mcgeary.org
-	name = Ryan McGeary
+	email = ktangwon@cs.cmu.edu
+	name = Kanat Tangwongsan
 [alias]
   co = checkout
   st = status
@@ -22,10 +22,10 @@
 [remote "origin"]
 	push = HEAD
 [github]
-	user = rmm5t
+	user = ktangwon
 [diff]
   ignoresubmodules = untracked
 [core]
-	excludesfile = /Users/rmcgeary/.gitignore
+	excludesfile = /Users/ktangwon/.gitignore
 [heroku]
 	account = personal
