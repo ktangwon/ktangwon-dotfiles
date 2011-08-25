@@ -1,4 +1,5 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/vendor/auctex")
 
 (setq custom-file "~/.emacs.d/ktangwon/custom.el")
 (load custom-file 'noerror)
@@ -6,6 +7,8 @@
 (load "ktangwon/env")
 (load "ktangwon/global")
 (load "ktangwon/defuns")
+(load "auctex.el" nil t t)
+(load "ktangwon/auctex")
 (load "ktangwon/bindings")
 (load "ktangwon/tabs")
 (load "ktangwon/disabled")
@@ -58,6 +61,6 @@
 (vendor 'feature-mode)
 (vendor 'mode-line-bell)
 (vendor 'revbufs       'revbufs)
-
+;; (vendor 'auctex        'tex-site)
 ;; (vendor 'ruby-electric 'ruby-electric-mode)
-;; (vendor 'auctex)
+
