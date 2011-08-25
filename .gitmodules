@@ -49,9 +49,6 @@
 [submodule "emacs.d/vendor/inf-ruby"]
 	path = emacs.d/vendor/inf-ruby
 	url = git://github.com/nonsequitur/inf-ruby.git
-[submodule "emacs.d/vendor/auctex"]
-	path = emacs.d/vendor/auctex
-	url = git://github.com/eschulte/auctex.git
 [submodule "emacs.d/vendor/htmlize"]
 	path = emacs.d/vendor/htmlize
 	url = git://github.com/rmm5t/htmlize.git

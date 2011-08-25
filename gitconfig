@@ -23,6 +23,7 @@
 	push = HEAD
 [github]
 	user = ktangwon
+	token = abf2ee1a5d95992e6a1b8725db860656
 [diff]
   ignoresubmodules = untracked
 [core]
