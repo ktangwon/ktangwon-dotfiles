@@ -1,4 +1,4 @@
-add-to-list 'load-path "~/.emacs.d/vendor")
+(add-to-list 'load-path "~/.emacs.d/vendor")
 
 (setq custom-file "~/.emacs.d/ktangwon/custom.el")
 (load custom-file 'noerror)
