@@ -16,8 +16,9 @@
 (global-set-key [(meta f2)]         'find-name-dired)
 (global-set-key [(shift f2)]        'occur)
 
+;; ktangwon - disabled
 ;; Keyboard macros
-(global-set-key [(shift f4)] 'kmacro-start-macro-or-insert-counter)
+;;(global-set-key [(shift f4)] 'kmacro-start-macro-or-insert-counter)
 ;; (global-set-key [(f4)]    'kmacro-end-or-call-macro)  ;; already defined
 
 ;; Refresh-like
@@ -61,7 +62,7 @@
 (windmove-default-keybindings 'meta)
 
 ;; Mac OS X conventions
-(global-set-key (kbd "M-a") 'mark-whole-buffer) ; was backward-sentence.
+;; (global-set-key (kbd "M-a") 'mark-whole-buffer) ; was backward-sentence.
 
 ;; Find matching parens
 (global-set-key (kbd "C-'") 'match-paren)

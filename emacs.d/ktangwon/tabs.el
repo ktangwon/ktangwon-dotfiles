@@ -8,7 +8,7 @@
 
 ;; Mode specific indent sizes
 ;; TODO: Consider putting these in their own mode specific inits
-(setq c-basic-offset 4)
+(setq c-basic-offset 2)
 (setq css-indent-offset 2)
 (setq sh-basic-offset 2)
 (set-default 'javascript-indent-level 2)
@@ -52,6 +52,13 @@
                (hippie-expand prefix)
              (dabbrev-expand prefix)))
           ((smart-indent)))))
+
+
+(defun hippie-unexpand ()
+  (interactive)
+  (hippie-expand 0))
+
+(define-key read-expression-map [(shift tab)] 'hippie-unexpand)
 
 (defun smart-indent ()
   "Indents region if mark is active, or current line otherwise."

@@ -10,7 +10,7 @@
 (require 'maxframe)
 ;; Biggest monitor width I currently have.  This is necessary when multiple
 ;; monitors exist; otherwise, the frame will span multiple displays.
-(setq mf-max-width 1920)
+(setq mf-max-width 1440)
 ;; Maximize on startup
 (add-hook 'window-setup-hook 'maximize-frame t)
 
