@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/vendor/auctex")
+(add-to-list 'load-path "~/.emacs.d/vendor/sml-mode")
 
 (setq custom-file "~/.emacs.d/ktangwon/custom.el")
 (load custom-file 'noerror)
@@ -7,6 +8,7 @@
 (load "ktangwon/env")
 (load "ktangwon/global")
 (load "ktangwon/defuns")
+(load "sml-mode-startup")
 (load "auctex.el" nil t t)
 (load "ktangwon/auctex")
 (load "ktangwon/bindings")
@@ -40,6 +42,7 @@
 (vendor 'rinari)
 (vendor 'textmate)
 (vendor 'maxframe)
+;; (vendor 'sml-mode 'sml-mode-startup)
 (vendor 'filladapt)
 (vendor 'coffee-mode)
 (vendor 'haml-mode)
