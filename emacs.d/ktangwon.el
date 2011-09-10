@@ -1,5 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/vendor/auctex")
+(add-to-list 'load-path "~/.emacs.d/vendor/reftex/lisp")
 (add-to-list 'load-path "~/.emacs.d/vendor/sml-mode")
 
 (setq custom-file "~/.emacs.d/ktangwon/custom.el")
@@ -9,8 +10,10 @@
 (load "ktangwon/global")
 (load "ktangwon/defuns")
 (load "sml-mode-startup")
+(load "ktangwon/sml")
 (load "auctex.el" nil t t)
 (load "ktangwon/auctex")
+(load "ktangwon/reftex")
 (load "ktangwon/bindings")
 (load "ktangwon/tabs")
 (load "ktangwon/disabled")
