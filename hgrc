@@ -3,6 +3,7 @@ users = ktangwon, 110103
 
 [ui]
 username = Kanat Tangwongsan <ktangwon@cs.cmu.edu>
+verbose = true
 
 [extensions]
 fetch =
