@@ -1,0 +1,16 @@
+Host lax 
+  User ktangwon
+  HostName lax.orasis.cs.cmu.edu
+
+Host bigbro5
+  User ktangwon
+  HostName bigbro5.ml.cmu.edu
+
+Host blackcat
+  User ktangwon
+  HostName freyja.aladdin.cs.cmu.edu
+  Port 4022
+
+Host mirasol
+  User kanat
+  HostName mirasol.cc.gt.atl.ga.us 
