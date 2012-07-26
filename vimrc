@@ -9,6 +9,7 @@ filetype indent on
 " Turn on that syntax highlighting
 syntax on
 
+set shiftwidth=2
 " Why is this not a default
 set hidden
 

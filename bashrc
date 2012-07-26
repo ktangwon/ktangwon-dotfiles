@@ -213,3 +213,5 @@ if [[ "$USER" == '' ]]; then
 fi
 
 [[ -s "/Users/ktangwon/.rvm/scripts/rvm" ]] && source "/Users/ktangwon/.rvm/scripts/rvm"
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
