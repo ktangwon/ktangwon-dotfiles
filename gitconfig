@@ -1,11 +1,15 @@
 [user]
-	email = ktangwon@cs.cmu.edu
-	name = Kanat Tangwongsan
+    email = ktangwon@cs.cmu.edu
+    name = Kanat Tangwongsan
 [alias]
-  co = checkout
-  st = status
-  br = branch
-  w = whatchanged
+    co = checkout
+    st = status
+    br = branch
+    w = whatchanged
+    hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+    type = cat-file -t
+    dump = cat-file -p
+
 [apply]
   whitespace = nowarn
 [color]
@@ -13,20 +17,22 @@
   status = auto
   branch = auto
   interactive = auto
-  ui = true
+  ui = auto
   pager = true
+
 [merge]
   summary = true
+
 [push]
   default = tracking
+
 [remote "origin"]
 	push = HEAD
-[github]
-	user = ktangwon
-	token = abf2ee1a5d95992e6a1b8725db860656
+
 [diff]
   ignoresubmodules = untracked
+
 [core]
-	excludesfile = /Users/ktangwon/.gitignore
-[heroku]
-	account = personal
+    excludesfile = /Users/ktangwon/.gitignore
+    autocrlf = input
+    safecrlf = true
