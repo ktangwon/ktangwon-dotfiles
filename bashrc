@@ -22,7 +22,7 @@ conditionally_prefix_path /usr/local/sbin
 conditionally_prefix_path /usr/local/share/python
 conditionally_prefix_path ~/bin
 conditionally_prefix_path ~/bin/private
-
+conditionally_prefix_path /usr/local/Cellar/smlnj/110.72/libexec/bin
 PATH=.:./bin:${PATH}
 
 ############################################################
