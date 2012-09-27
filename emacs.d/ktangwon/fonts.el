@@ -10,6 +10,7 @@
 ;;
 (and window-system
 	(set-default-font "Apple Monaco-18")
+;;	(set-default-font "Apple Menlo-18")
 	)
 
 ;; To change a font size globally:

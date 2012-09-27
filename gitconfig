@@ -34,5 +34,5 @@
 
 [core]
     excludesfile = /Users/ktangwon/.gitignore
-    autocrlf = input
-    safecrlf = true
+## ;;    autocrlf = input
+## ;;    safecrlf = true

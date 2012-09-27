@@ -1,8 +1,12 @@
 ;;; Pretty colors
 
-(color-theme-initialize)
-(vendor 'color-theme-ir-black)
-(color-theme-ir-black)
+(add-to-list 'custom-theme-load-path 
+	     "~/.emacs.d/vendor/color-theme-tomorrow/GNU Emacs/")
+
+(load-theme 'tomorrow-night t)
+;; (color-theme-initialize)
+;; (vendor 'color-theme-ir-black)
+;; (color-theme-ir-black)
 
 ;; (vendor 'color-theme-arjen)
 ;; (color-theme-arjen)
