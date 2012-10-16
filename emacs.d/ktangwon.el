@@ -1,3 +1,10 @@
+;; to fix emacs 24's dropping of 'make-local-hook
+(defalias 'make-local-hook
+  (if (featurep 'xemacs)
+      'make-local-hook
+    'identity))
+
+
 (add-to-list 'load-path "~/.emacs.d/vendor")
 (add-to-list 'load-path "~/.emacs.d/vendor/auctex")
 (add-to-list 'load-path "~/.emacs.d/vendor/reftex/lisp")
@@ -70,4 +77,7 @@
 (vendor 'revbufs       'revbufs)
 ;; (vendor 'auctex        'tex-site)
 ;; (vendor 'ruby-electric 'ruby-electric-mode)
+;;
 
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
+(require 'spl-mode)
