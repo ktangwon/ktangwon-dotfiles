@@ -40,6 +40,29 @@ nmap <silent> ,ev :e $MYVIMRC<cr>
 " 's'ource 'v'imrc)
 nmap <silent> ,sv :so $MYVIMRC<cr>
 
+" File type dependent options
+if has("autocmd")
+	" Disable visual and audio bell
+	autocmd VimEnter * set vb t_vb=
+	
+	" Enable file type detection, plugins, and indentation rules.
+	filetype plugin indent on
+	autocmd FileType text setlocal textwidth=80
+	" The above doesn't include this.
+"	autocmd BufNewFile,BufRead *.txt setlocal textwidth=80
+"	autocmd BufNewFile,BufRead *.tex set filetype=tex
+"	autocmd BufNewFile,BufRead *.cellgen set filetype=c
+	autocmd BufNewFile,BufRead *.spl set filetype=spl
+	autocmd BufNewFile,BufRead *.splmm set filetype=spl
+	autocmd BufNewFile,BufRead *.cgt set filetype=cpp
+	" When editing a file, always jump to the last known cursor position.
+	autocmd BufReadPost *
+		\ if line("'\"") > 0 && line("'\"") <= line("$") |
+		\ 	execute "normal g`\"" |
+		\ endif
+endif
+
+
 
 if has("gui_running")
 	set guifont=Monaco:h14

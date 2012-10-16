@@ -12,7 +12,7 @@
 
 ;; (setq TeX-view-program-list '(("Okular" "okular --unique %u") ("Skim" "/Applications/Skim.app/Contents/SharedSupport/displayline %q")))
 
- 	
+
 (eval-after-load "tex"
   '(add-to-list 'TeX-command-list '("XeLaTeX" "%`xelatex %(mode)%' %t" TeX-run-TeX nil
      (latex-mode doctex-mode))))
@@ -23,6 +23,8 @@
 
 ;;(setq TeX-command-list '(("XeLaTeX_SyncteX" "%`xelatex --synctex=1%(mode)%' %t" TeX-run-TeX nil (latex-mode doctex-mode) :help "Run XeLaTeX")))
 
-(add-hook 'LaTeX-mode-hook 'TeX-PDF-mode) ;turn on pdf-mode.  AUCTeX
-                                             ;will call pdflatex to
-                                          ;compile instead of latex.
+(setq TeX-PDF-mode t)
+
+;; (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode) ;turn on pdf-mode.  AUCTeX
+;;                                              ;will call pdflatex to
+;;                                           ;compile instead of latex.
