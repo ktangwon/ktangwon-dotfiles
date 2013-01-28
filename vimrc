@@ -10,6 +10,7 @@ filetype indent on
 syntax on
 
 set shiftwidth=2
+set tabstop=2
 " Why is this not a default
 set hidden
 

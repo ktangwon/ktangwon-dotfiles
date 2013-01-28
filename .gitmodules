@@ -76,3 +76,15 @@
 [submodule "emacs.d/vendor/color-theme-tomorrow"]
 	path = emacs.d/vendor/color-theme-tomorrow
 	url = git://github.com/chriskempson/tomorrow-theme.git
+[submodule "emacs.d/vendor/yasnippet"]
+	path = emacs.d/vendor/yasnippet
+	url = https://github.com/capitaomorte/yasnippet
+[submodule "emacs.d/vendor/auto-complete"]
+	path = emacs.d/vendor/auto-complete
+	url = https://github.com/auto-complete/auto-complete
+[submodule "emacs.d/vendor/popup"]
+	path = emacs.d/vendor/popup
+	url = https://github.com/auto-complete/popup-el
+[submodule "emacs.d/vendor/auto-complete-clang"]
+	path = emacs.d/vendor/auto-complete-clang
+	url = https://github.com/brianjcj/auto-complete-clang

@@ -1,0 +1,1 @@
+/Users/ktangwon/projects/worksphere/Personal/scripts/fixlncs.sh

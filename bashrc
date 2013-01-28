@@ -214,4 +214,6 @@ fi
 
 [[ -s "/Users/ktangwon/.rvm/scripts/rvm" ]] && source "/Users/ktangwon/.rvm/scripts/rvm"
 
+PATH=$PATH:$HOME/.bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:/usr/local/Cellar/smlnj/110.75/libexec/bin

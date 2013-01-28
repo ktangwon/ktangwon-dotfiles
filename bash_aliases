@@ -197,4 +197,5 @@ function serve {
   ruby -rwebrick -e"s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd); trap(%q(INT)) { s.shutdown }; s.start"
 }
 
+alias mtsyss='sshfs syss-e1:. $HOME/syss-node'
 ############################################################
