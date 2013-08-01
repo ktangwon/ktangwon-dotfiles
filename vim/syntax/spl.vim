@@ -1,21 +1,21 @@
 " Vim syntax file
 " Language:	SPL
-" Maintainer:	Henrique Andrade <hcma@us.ibm.com>
-" Last Change:	2009 Feb 06
 
 " Quit when a (custom) syntax file was already loaded
 if exists("b:current_syntax")
   finish
 endif
 
-syn keyword     splSTOperator	Custom Beacon Functor Filter DirectoryScan DynamicFilter Punctor Aggregate DeDuplicate ThreadedSplit Barrier Pair Sort Split Delay Throttle Join Union DirectoryScan FileSource FileSink TCPSource TCPSink UDPSource UDPSink PerfSink Import Export JavaOp Punctor  Gate 
+syn keyword     splSTOperator	Custom Beacon Functor Filter DirectoryScan DynamicFilter Punctor Aggregate DeDuplicate ThreadedSplit Barrier Pair Sort Split Delay Throttle Join Union DirectoryScan FileSource FileSink TCPSource TCPSink UDPSource UDPSink PerfSink Import Export JavaOp Punctor Gate XMLParse Switch MetricsSink V1TCPSource V1TCPSink Gate Parse Format Compress Decompress CharacterTransform
 syn keyword     splStorageClass	mutable static public stateful
-syn keyword	splType           uint8 int8 uint16 int16 uint32 int32 uint64 int64 float16 float32 float64 decimal32 decimal64 decimal128 complex32 complex64 tuple boolean void timestamp rstring ustring map list set enum type blob
-syn keyword	splStatement      namespace composite graph stream as return use state var in
-syn keyword	splStructure	logic param input output config window onTuple onPunct
+syn keyword	splType           uint8 int8 uint16 int16 uint32 int32 uint64 int64 float32 float64 decimal32 decimal64 decimal128 complex32 complex64 tuple boolean void timestamp rstring ustring map list set enum blob xml
+syn keyword	splStatement      namespace composite stream as return use state var onTuple onPunct onProcess
+syn keyword	splStructure	logic param input output config window graph type
 syn keyword	splRepeat		if else while break for
-syn keyword	splPunctMark		Sys FinalMarker
+syn keyword	splPunctMark		Sys FinalMarker WindowMarker
 syn keyword	splConstant		false true
+
+syn match       splAnnotation '@\(parallel\|spl_note\|spl_category\|spl_tag\)'
 
 " splCommentGroup allows adding matches for special things in comments
 syn cluster	splCommentGroup	contains=splTodo
@@ -28,8 +28,6 @@ if !exists("c_no_utf")
 endif
 if exists("c_no_cformat")
   syn region	splString		start=+L\="+ skip=+\\\\\|\\"+ end=+"+ contains=splSpecial,@Spell
-  " splCppString: same as splString, but ends at end of line
-  syn region	splString	start=+L\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=splSpecial,@Spell
 else
   if !exists("c_no_c99") " ISO C99
     syn match	splFormat		display "%\(\d\+\$\)\=[-+' #0*]*\(\d*\|\*\|\*\d\+\$\)\(\.\(\d*\|\*\|\*\d\+\$\)\)\=\([hlLjzt]\|ll\|hh\)\=\([aAbdiuoxXDOUfFeEgGcCsSpn]\|\[\^\=.[^]]*\]\)" contained
@@ -38,8 +36,7 @@ else
   endif
   syn match	splFormat		display "%%" contained
   syn region	splString		start=+L\="+ skip=+\\\\\|\\"+ end=+"+ contains=splSpecial,splFormat,@Spell
-  " splCppString: same as splString, but ends at end of line
-  syn region	splString	start=+L\="+ skip=+\\\\\|\\"\|\\$+ excludenl end=+"+ end='$' contains=splSpecial,splFormat,@Spell
+  syn region	splString		start=+L\='+ skip=+\\\\\|\\'+ end=+'+ contains=splSpecial,splFormat,@Spell
 endif
 
 syn match	splCharacter	"L\='[^\\]'"
@@ -89,7 +86,7 @@ syn case match
 
 if exists("c_comment_strings")
   " A comment can contain cString, cCharacter and splNumber.
-  " But a "*/" inside a splString in a splComment DOES end the splomment!  So we
+  " But a "*/" inside a splString in a splComment DOES end the splComment!  So we
   " need to use a special type of splString: splCommentString, which also ends on
   " "*/", and sees a "*" at the start of the line as comment again.
   " Unfortunately this doesn't very well work for // type of comments :-(
@@ -115,6 +112,7 @@ syntax match	splCommentError	display "\*/"
 syntax match	splCommentStartError display "/\*"me=e-1 contained
 
 syntax region	splBlock		start="{" end="}" transparent fold
+syntax match    splXML                  /xml\s*<\s*\(\(\".*\"\)\|\('.*'\)\)r\?\s*>\|\<xml\>/
 
 if !exists("c_no_if0")
   if !exists("c_no_if0_fold")
@@ -132,7 +130,7 @@ syn match	splInclude	display "^\s*\(%:\|#\)\s*include\>\s*["<]" contains=splIncl
 syn region	splDefine		start="^\s*\(%:\|#\)\s*\(define\|undef\)\>" skip="\\$" end="$" end="//"me=s-1 contains=ALLBUT,@cPreProcGroup,@Spell
 
 " Highlight User Labels
-syn cluster	splMultiGroup	contains=splIncluded,splSpecial,splCommentSkip,splCommentString,splComment2String,@cCommentGroup,splCommentStartError,splUserCont,splUserLabel,splBitField,splCppOut,splCppOut2,splCppSkip,splFormat,splNumber,splFloat,splNumbersCom,splCppParen,splCppBracket,splCppString
+syn cluster	splMultiGroup	contains=splIncluded,splSpecial,splCommentSkip,splCommentString,splComment2String,@cCommentGroup,splCommentStartError,splUserCont,splUserLabel,splBitField,splCppOut,splCppOut2,splCppSkip,splFormat,splNumber,splFloat,splNumbersCom
 " Avoid matching foo::bar() in C++ by requiring that the next char is not ':'
 
 syn match	splUserLabel	display "\I\i*" contained
@@ -155,7 +153,6 @@ exec "syn sync ccomment cComment minlines=" . b:c_minlines
 " Define the default highlighting.
 " Only used when an item doesn't have highlighting yet
 hi def link splFormat		splSpecial
-hi def link splCppString		splString
 hi def link splCommentL		splComment
 hi def link splCommentStart	splComment
 hi def link splConditional	Conditional
@@ -172,6 +169,7 @@ hi def link splCommentStartError	splError
 hi def link splSpaceError		splError
 hi def link splSpecialError	splError
 hi def link splOperator		Operator
+hi def link splAnnotation       splStructure	
 hi def link splStructure		Structure
 hi def link splStorageClass	StorageClass
 hi def link splInclude		Include
@@ -182,6 +180,7 @@ hi def link splError		Error
 hi def link splStatement		Statement
 hi def link splPunctMark		Operator
 hi def link splType		Type
+hi def link splXML              Type
 hi def link splConstant		Constant
 hi def link splCommentString	splString
 hi def link splComment2String	splString
@@ -191,4 +190,5 @@ hi def link splComment		Comment
 hi def link splSpecial		SpecialChar
 hi def link splTodo		Todo
 
+let b:current_syntax = "spl"
 " vim: ts=8

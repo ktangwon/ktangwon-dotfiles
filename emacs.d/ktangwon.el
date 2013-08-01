@@ -9,6 +9,9 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/auctex")
 (add-to-list 'load-path "~/.emacs.d/vendor/reftex/lisp")
 (add-to-list 'load-path "~/.emacs.d/vendor/sml-mode")
+(add-to-list 'load-path "~/.emacs.d/vendor/auto-complete")
+(add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-clang")
+(add-to-list 'load-path "~/.emacs.d/vendor/popup")
 
 (setq custom-file "~/.emacs.d/ktangwon/custom.el")
 (load custom-file 'noerror)
@@ -47,13 +50,15 @@
 
 ;; (load "ktangwon/hl-line")
 ;; (load "ktangwon/iswitchb")
-
 (vendor 'color-theme)
 (vendor 'ruby-mode)
 (vendor 'rinari)
 (vendor 'textmate)
 (vendor 'maxframe)
 ;; (vendor 'sml-mode 'sml-mode-startup)
+(vendor 'tree-mode)
+(vendor 'windata)
+(vendor 'dirtree)
 (vendor 'filladapt)
 (vendor 'coffee-mode)
 (vendor 'haml-mode)

@@ -217,3 +217,5 @@ fi
 PATH=$PATH:$HOME/.bin
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH=$PATH:/usr/local/Cellar/smlnj/110.75/libexec/bin
+CLASSPATH=$CLASSPATH:$HOME/opt/share/java/zmq.jar:.
+LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/opt/lib

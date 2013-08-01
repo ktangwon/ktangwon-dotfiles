@@ -43,8 +43,10 @@
 ;; For emacsclient
 (server-start)
 
-;; Trailing whitespace is unnecessary
-(add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+;; Don't delete trailing whitespace --
+;; (add-hook 'before-save-hook (lambda () (delete-trailing-whitespace)))
+;; instead show them
+(setq show-trailing-whitespace t)
 
 ;; Trash can support
 (setq delete-by-moving-to-trash t)

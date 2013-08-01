@@ -1,3 +1,6 @@
+" Load pathogen
+execute pathogen#infect()
+
 " Forget being compatible with good ol' vi
 set nocompatible
 

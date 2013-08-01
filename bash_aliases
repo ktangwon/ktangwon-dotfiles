@@ -197,5 +197,7 @@ function serve {
   ruby -rwebrick -e"s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd); trap(%q(INT)) { s.shutdown }; s.start"
 }
 
+alias ec='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
+
 alias mtsyss='sshfs syss-e1:. $HOME/syss-node'
 ############################################################
