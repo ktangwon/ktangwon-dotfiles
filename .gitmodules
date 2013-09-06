@@ -91,3 +91,18 @@
 [submodule "emacs.d/vendor/dirtree"]
 	path = emacs.d/vendor/dirtree
 	url = https://github.com/zk/emacs-dirtree
+[submodule "emacs.d/vendor/gnuplot"]
+	path = emacs.d/vendor/gnuplot
+	url = https://github.com/bruceravel/gnuplot-mode.git
+[submodule "emacs.d/vendor/scala-mode2"]
+	path = emacs.d/vendor/scala-mode2
+	url = git://github.com/hvesalai/scala-mode2.git
+[submodule "emacs.d/vendor/projectile"]
+	path = emacs.d/vendor/projectile
+	url = https://github.com/bbatsov/projectile
+[submodule "emacs.d/vendor/powerline"]
+	path = emacs.d/vendor/powerline
+	url = https://github.com/milkypostman/powerline.git
+[submodule "emacs.d/vendor/cl-lib"]
+	path = emacs.d/vendor/cl-lib
+	url = https://github.com/emacsmirror/cl-lib.git
