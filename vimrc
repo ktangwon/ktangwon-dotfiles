@@ -31,10 +31,13 @@ set ch=2
 " At least let yourself know what mode you're in
 set showmode
 set showcmd
+" set number
+" hi LineNr ctermfg=darkgrey ctermbg=black
 
 " Enable enhanced command-line completion. Presumes you have compiled
 " with +wildmenu.  See :help 'wildmenu'
 set wildmenu
+set wildmode=longest:full
 
 " Let's make it easy to edit this file (mnemonic for the key sequence is
 " 'e'dit 'v'imrc)

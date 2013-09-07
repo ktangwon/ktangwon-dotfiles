@@ -178,6 +178,11 @@ alias repair-mongo="rm /usr/local/var/mongodb/mongod.lock && mongod --repair"
 if [ -f /Applications/Emacs.app/Contents/MacOS/Emacs ]; then
   alias emacs='TERM=xterm-256color /Applications/Emacs.app/Contents/MacOS/Emacs'
   alias emacsclient='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
+	# start a terminal frame
+	alias em="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -t -a /Applications/Emacs.app/Contents/MacOS/Emacs -nw"
+
+	# do not start a new frame
+	alias ec="/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n -a /Applications/Emacs.app/Contents/MacOS/Emacs"
 fi
 
 alias grep='GREP_COLOR="1;37;41" grep --color=auto'
@@ -197,7 +202,6 @@ function serve {
   ruby -rwebrick -e"s = WEBrick::HTTPServer.new(:Port => $port, :DocumentRoot => Dir.pwd); trap(%q(INT)) { s.shutdown }; s.start"
 }
 
-alias ec='/Applications/Emacs.app/Contents/MacOS/bin/emacsclient -n'
 
 alias mtsyss='sshfs syss-e1:. $HOME/syss-node'
 ############################################################
