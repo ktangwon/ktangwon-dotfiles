@@ -19,7 +19,7 @@
 (load "ktangwon/env")
 (load "ktangwon/global")
 (load "ktangwon/defuns")
-(load "sml-mode-startup")
+(load "sml-mode")
 (load "ktangwon/sml")
 (load "auctex.el" nil t t)
 (load "ktangwon/auctex")
@@ -91,9 +91,16 @@
 (vendor 'feature-mode)
 (vendor 'mode-line-bell)
 (vendor 'revbufs       'revbufs)
+(vendor 'go-mode)
 ;; (vendor 'auctex        'tex-site)
 ;; (vendor 'ruby-electric 'ruby-electric-mode)
 ;;
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
 (require 'spl-mode)
+
+;; temp place for emacs-for-python; will clean up later
+(add-to-list 'load-path "~/.emacs.d/vendor/emacs-for-python/")
+(require 'epy-setup)      ;; It will setup other loads, it is required!
+(require 'epy-python)     ;; If you want the python facilities [optional]
+(require 'epy-completion) ;; If you want the autocompletion settings [optional]

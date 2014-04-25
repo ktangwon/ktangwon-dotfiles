@@ -106,3 +106,9 @@
 [submodule "emacs.d/vendor/cl-lib"]
 	path = emacs.d/vendor/cl-lib
 	url = https://github.com/emacsmirror/cl-lib.git
+[submodule "emacs.d/vendor/emacs-for-python"]
+	path = emacs.d/vendor/emacs-for-python
+	url = https://github.com/gabrielelanaro/emacs-for-python.git
+[submodule "emacs.d/vendor/go-mode"]
+	path = emacs.d/vendor/go-mode
+	url = https://github.com/dominikh/go-mode.el

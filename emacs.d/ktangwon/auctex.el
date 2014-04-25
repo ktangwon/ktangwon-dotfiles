@@ -25,6 +25,7 @@
 
 (setq TeX-PDF-mode t)
 
-;; (add-hook 'LaTeX-mode-hook 'TeX-PDF-mode) ;turn on pdf-mode.  AUCTeX
-;;                                              ;will call pdflatex to
-;;                                           ;compile instead of latex.
+
+;;(add-hook 'LaTeX-mode-hook (setq TeX-PDF-mode t)) ;turn on pdf-mode.  AUCTeX
+                                                   ;will call pdflatex to
+                                                   ;compile instead of latex.

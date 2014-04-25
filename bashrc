@@ -23,7 +23,8 @@ conditionally_prefix_path /usr/local/share/python
 conditionally_prefix_path ~/bin
 conditionally_prefix_path ~/bin/private
 conditionally_prefix_path /usr/local/Cellar/smlnj/110.72/libexec/bin
-PATH=.:./bin:${PATH}
+conditionally_prefix_path ~/lib/google_appengine
+PATH=.:${PATH}
 
 ############################################################
 ## MANPATH
@@ -166,7 +167,7 @@ export EDITOR="vi"
 # sessions (weird that this is not enabled by default).
 shopt -s histappend
 
-export HISTIGNORE="&:pwd:ls:ll:lal:[bf]g:exit:rm*:sudo rm*"
+export HISTIGNORE="&:pwd:ls:ll:lal:[bf]g:exit"
 # remove duplicates from the history (when a new item is added)
 export HISTCONTROL=erasedups
 # increase the default size from only 1,000 items
@@ -217,7 +218,11 @@ fi
 PATH+=:$HOME/.bin
 PATH+=:$HOME/.rvm/bin # Add RVM to PATH for scripting
 PATH+=:/usr/local/Cellar/smlnj/110.75/libexec/bin
+PATH+=:/usr/local/Cellar/go/1.2/libexec/bin
 CLASSPATH+=:$HOME/opt/share/java/zmq.jar:.
 LD_LIBRARY_PATH+=:$HOME/opt/lib
+
+PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
+export PYTHONPATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
