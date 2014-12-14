@@ -67,9 +67,6 @@
 [submodule "emacs.d/vendor/textmate.el"]
 	path = emacs.d/vendor/textmate.el
 	url = https://github.com/defunkt/textmate.el.git
-[submodule "emacs.d/vendor/auctex"]
-	path = emacs.d/vendor/auctex
-	url = https://github.com/jwiegley/auctex.git
 [submodule "emacs.d/vendor/sml-mode"]
 	path = emacs.d/vendor/sml-mode
 	url = https://github.com/emacsmirror/sml-mode.git
