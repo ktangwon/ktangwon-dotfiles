@@ -226,3 +226,5 @@ PYTHONPATH=/usr/local/lib/python2.7/site-packages:$PYTHONPATH
 export PYTHONPATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+. /usr/local/etc/grc.bashrc
