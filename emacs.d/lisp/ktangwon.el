@@ -13,7 +13,7 @@
 (add-to-list 'load-path "~/.emacs.d/vendor/auto-complete-clang")
 (add-to-list 'load-path "~/.emacs.d/vendor/popup")
 
-(setq custom-file "~/.emacs.d/ktangwon/custom.el")
+(setq custom-file "~/.emacs.d/lisp/ktangwon/custom.el")
 (load custom-file 'noerror)
 
 (load "ktangwon/env")
@@ -30,6 +30,7 @@
 (load "ktangwon/fonts")
 (load "ktangwon/utf-8")
 (load "ktangwon/scratch")
+(load "ktangwon/color-theme")
 (load "ktangwon/grep")
 (load "ktangwon/diff")
 (load "ktangwon/ido")
@@ -92,12 +93,12 @@
 (vendor 'mode-line-bell)
 (vendor 'revbufs       'revbufs)
 (vendor 'go-mode)
+;; (vendor 'auctex)
 ;; (vendor 'auctex        'tex-site)
 ;; (vendor 'ruby-electric 'ruby-electric-mode)
 ;;
 
 (add-to-list 'load-path (expand-file-name "~/.emacs.d/vendor"))
-(require 'spl-mode)
 
 ;; temp place for emacs-for-python; will clean up later
 (add-to-list 'load-path "~/.emacs.d/vendor/emacs-for-python/")

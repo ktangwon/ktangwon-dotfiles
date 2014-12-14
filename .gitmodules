@@ -109,3 +109,6 @@
 [submodule "emacs.d/vendor/go-mode"]
 	path = emacs.d/vendor/go-mode
 	url = https://github.com/dominikh/go-mode.el
+[submodule "emacs.d/vendor/auctex"]
+	path = emacs.d/vendor/auctex
+	url = https://github.com/giordano/auctex.git
