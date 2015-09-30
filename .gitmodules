@@ -112,3 +112,6 @@
 [submodule "emacs.d/vendor/auctex"]
 	path = emacs.d/vendor/auctex
 	url = https://github.com/giordano/auctex.git
+[submodule "oh-my-zsh"]
+	path = oh-my-zsh
+	url = git://github.com/robbyrussell/oh-my-zsh.git
